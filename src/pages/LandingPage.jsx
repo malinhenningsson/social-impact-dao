@@ -45,8 +45,14 @@ const LandingPage = ({ setPage }) => {
         type: 3, // target
         identityType: 2, // direct payload
         notification: {
-          title: `titlez`,
-          body: `bodyz`,
+          title: `End Plastic Waste`,
+          body: `We Demand Plastic Free Options`,
+        },
+        payload: {
+          title: `End Plastic Waste`,
+          body: `We Demand Plastic Free Options`,
+          cta: "https://polite-panda-352caf.netlify.app/#/plastic",
+          img: "https://img.freepik.com/premium-vector/set-zero-waste-elements-zero-waste-doodles-no-plastic-garbage-sorting-campaign-symbols-stickers_273625-16.jpg",
         },
         payload: {
           title: `payload title`,
@@ -75,7 +81,14 @@ const LandingPage = ({ setPage }) => {
           audiences to positive action.
         </Text>
         <ButtonContainer>
-          <S.Button onClick={() => setPage("create")}>Create campaign</S.Button>
+          <S.Button
+            onClick={() => {
+              setPage("create")
+              sendNotification()
+            }}
+          >
+            Create campaign
+          </S.Button>
           <S.Button secondary>Connect wallet</S.Button>
         </ButtonContainer>
       </Container>
